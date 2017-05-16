@@ -45,7 +45,8 @@
   var lives ;             // Lives
   var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
-
+  var wins = 0;			//Counts wins
+  var losses = 0;		//counnts losses	
   // Get elements
   var showLives = document.getElementById("mylives");
   var showCategory = document.getElementById("scategory");
@@ -109,10 +110,12 @@
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      losses++;
     }
     for (var i = 0; i < guesses.length; i++) {
       if (counter + space === guesses.length) {
         showLives.innerHTML = "You Win!";
+        wins++;
       }
     }
   }
